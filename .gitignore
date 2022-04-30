@@ -1,0 +1,5 @@
+virtualenv
+venv
+*.pyc
+.env
+.DS_Store

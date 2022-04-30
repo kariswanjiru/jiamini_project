@@ -8,6 +8,7 @@ import pandas as pd
 
 data = pd.read_csv('pos_sales.csv')
 app = dash.Dash()
+server = app.server
 
 
 
