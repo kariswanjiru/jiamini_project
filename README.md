@@ -26,6 +26,7 @@ This is a solution a business analytics dashboard for a mini-mart. The mini-mart
 ### Links
 
 - Solution URL: [My solution](https://github.com/kariswanjiru/jiamini_project/)
+- Live demo URL : [Web App]()
 
 ## My process
 
