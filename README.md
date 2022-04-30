@@ -1,6 +1,5 @@
-# loan-prediction-hackathon
+# Business-dashboard
 
-This is a solution to the [Loan Prediction Practice Problem](https://datahack.analyticsvidhya.com/contest/practice-problem-loan-prediction-iii/#About). Analytics Vidya hackathons help you improve your data scince skills by solving realistic projects. 
 
 ## Table of contents
 
@@ -19,12 +18,14 @@ This is a solution to the [Loan Prediction Practice Problem](https://datahack.an
 
 ### The challenge
 
-Dream Housing Finance company deals in all kinds of home loans. They have presence across all urban, semi urban and rural areas. Customer first applies for home loan and after that company validates the customer eligibility for loan. The solution will then have to automate the process of checking eligibility of an applcant by the data provided online.
+This is a solution a business analytics dashboard for a mini-mart. The mini-mart started in 2020 to date due to human error and faulty pos system the sales report generated didn't show the sales well.
+
+
 
 
 ### Links
 
-- Solution URL: [My solution](https://github.com/kariswanjiru/loan-prediction-hackathon)
+- Solution URL: [My solution](https://github.com/kariswanjiru/jiamini_project/)
 
 ## My process
 
@@ -33,11 +34,11 @@ Dream Housing Finance company deals in all kinds of home loans. They have presen
 - Pandas
 - Numpy
 - Skit-learn
-- XGBoost
+- Matplotlib
 
 ### What I learned
 
-I learnt how to use stratified k-folds to better the accuracy of my machine learning algorithm.
+I learnt how to use stratified k-folds to better the accuracy of my machine learning algorithm and using concat to join two datasets.
 
 This is a code snippet of what i learnt, see below:
 
@@ -58,9 +59,12 @@ for train_index,test_index in kf.split(x , y):
     pred = model.predict_proba(xvl)[:, 1]
     
 ```
+```python
+ pd.concat([df1,df2])
+```
 
 ### Continued development
-For my next projects I will improve my accuracy using feature engineering and boosting algorithis like Adaboost.  
+A better UI for the dashboard will be created using react js and flask. To improve accuracy better KPI's for business intelligence dashboardswill be used in combination with boosting algorithms like Ada Boost to improve forecasting.
 
 ### Useful resources
 
