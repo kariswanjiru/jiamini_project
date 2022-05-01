@@ -38,13 +38,13 @@ app.layout = html.Div(id = 'parent', children = [
               [Input(component_id='dropdown', component_property= 'value')])
 def graph_update(dropdown_value):
     print(dropdown_value)
-    fig = px.Figure([px.bar(data ,x = data['month'], y = data['{}'.format(dropdown_value)],\
+    fig = px.Figure([px.bar(data ,x = data['Profit'], y = data['{}'.format(dropdown_value)],\
                      line = dict(color = 'firebrick', width = 4))
                      ])
     
-    fig.update_layout(title = 'Stock prices over time',
-                      xaxis_title = 'Month',
-                      yaxis_title = 'Profit'
+    fig.update_layout(title = 'Profit over time',
+                      xaxis_title = 'Profit made',
+                      yaxis_title = 'Time'
                       )
     return fig  
 
