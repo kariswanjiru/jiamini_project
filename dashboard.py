@@ -28,7 +28,7 @@ app.layout = html.Div(id = 'parent', children = [
             {'label':'Monthly', 'value':'M' },
             {'label': 'daily', 'value':'D'},
             ],
-        value = 'month'),
+        value = 'M'),
         dcc.Graph(id = 'bar_plot')
     ])
     
@@ -82,7 +82,7 @@ app.layout = html.Div(id = 'parent', children = [
             {'label':'Monthly', 'value':'M' },
             {'label': 'daily', 'value':'D'},
             ],
-        value = 'month'),
+        value = 'M'),
         dcc.Graph(id = 'bar_plot')
     ])
     
