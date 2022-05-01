@@ -9,8 +9,8 @@ import pandas as pd
 data = pd.read_csv('pos_sales.csv')
 app = dash.Dash()
 
-monthly = data.groupby('month')['profit'].sum().to_frame()
-daily = data.groupby('dayofweek')['profit'].sum().to_frame()
+#monthly = data.groupby('month')['profit'].sum().to_frame()
+#daily = data.groupby('dayofweek')['profit'].sum().to_frame()
 app = dash.Dash()
 
 server = app.server
