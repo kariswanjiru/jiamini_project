@@ -26,8 +26,8 @@ app.layout = html.Div(id = 'parent', children = [
 
         dcc.Dropdown( id = 'dropdown',
         options = [
-            {'label':'Monthly', 'value':'M' },
-            {'label': 'daily', 'value':'D'},
+            {'label':'month', 'value':'M' },
+            {'label': 'dayofweek', 'value':'D'},
             ],
         value = 'M'),
         dcc.Graph(id = 'bar_plot')
