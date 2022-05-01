@@ -7,7 +7,7 @@ from dash.dependencies import Input, Output
 import pandas as pd
 
 data = pd.read_csv('pos_sales.csv')
-app = dash.Dash()
+app = dash.Dash(__name__)
 server = app.server
 
 
