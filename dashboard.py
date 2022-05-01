@@ -27,7 +27,7 @@ app.layout = html.Div(id = 'parent', children = [
             {'label':'Monthly', 'value':'M' },
             {'label': 'daily', 'value':'D'},
             ],
-        value = 'month'),
+        value = 'M'),
         dcc.Graph(id = 'bar_plot')
     ])
     
@@ -49,5 +49,8 @@ def graph_update(dropdown_value):
 
 
 
+
+
+if __name__ == '__main__': 
     app.run_server()
 
