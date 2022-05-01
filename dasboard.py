@@ -7,6 +7,8 @@ from dash.dependencies import Input, Output
 import pandas as pd
 
 data = pd.read_csv('pos_sales.csv')
+monthly = data.groupby('month')['profit'].sum().to_frame()
+daily = data.groupby('dayofweek')['profit'].sum().to_frame()
 app = dash.Dash()
 server = app.server
 
@@ -19,7 +21,7 @@ app.layout = html.Div(id = 'parent', children = [
 
         dcc.Dropdown( id = 'dropdown',
         options = [
-            {'label':'Month', 'value':'W' },
+            {'label':'Monthly', 'value':'M' },
             {'label': 'daily', 'value':'D'},
             ],
         value = 'month'),
@@ -31,13 +33,13 @@ app.layout = html.Div(id = 'parent', children = [
               [Input(component_id='dropdown', component_property= 'value')])
 def graph_update(dropdown_value):
     print(dropdown_value)
-    fig = go.Figure([go.Scatter(x = data['month'], y = data['{}'.format(dropdown_value)],\
+    fig = px.Figure([px.bar(data ,x = data['month'], y = data['{}'.format(dropdown_value)],\
                      line = dict(color = 'firebrick', width = 4))
                      ])
     
     fig.update_layout(title = 'Stock prices over time',
-                      xaxis_title = 'Dates',
-                      yaxis_title = 'Prices'
+                      xaxis_title = 'Month',
+                      yaxis_title = 'Profit'
                       )
     return fig  
 
