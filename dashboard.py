@@ -20,33 +20,38 @@ server = app.server
 
 
 
-app.layout = html.Div(id = 'parent', children = [
-    html.H1(id = 'H1', children = 'BI_dasboard', style = {'textAlign':'center',\
-                                            'marginTop':40,'marginBottom':40}),
+app.layout = html.Div([
+    html.H4('Profits by day of week'),
+    dcc.Dropdown(
+        id="dropdown",
+        options=["Monday", "Tuesday", "Wednesday","Thursday","Friday","Saturday","Sunday" ],
+        value="0",
+        clearable=False,
+    ),
+    dcc.Graph(id="graph"),
+])
+app.layout = html.Div([
+    html.H4('Profits by month'),
+    dcc.Graph(id="graph"),
+])
+    
+    
+@app.callback(
+    Output("graph", "figure"), 
+    Input("dropdown", "value"))
+def update_bar_chart(dayofweek):
+    mask = data["dayofweek"] == dayofweek
+    fig1 = px.bar(data[mask] ,  x = 'profit' , y = 'dayofweek' , color = 'year' , title = 'daily profit ' )
+fig1.show()
+    return fig1
 
-        dcc.Dropdown( id = 'dropdown',
-        options = [
-            {'label':'Monthly', 'value':'month' },
-            {'label': 'Daily', 'value':'dayofweek'},
-            ],
-        value = 'month'),
-        dcc.Graph(id = 'bar_plot')
-    ])
-    
-    
-@app.callback(Output(component_id='bar_plot', component_property= 'figure'),
-              [Input(component_id='dropdown', component_property= 'value')])
-def graph_update(dropdown_value):
-    print(dropdown_value)
-    fig = px.Figure([px.bar(data ,x = data['Profit'], y = data['{}'.format(dropdown_value)],\
-                     line = dict(color = 'firebrick', width = 4))
-                     ])
-    
-    fig.update_layout(title = 'Profit over time',
-                      xaxis_title = 'Profit made',
-                      yaxis_title = 'Time'
-                      )
-    return fig  
+@app.callback(
+    Output("graph", "figure"), 
+    Input("dropdown", "value"))
+def update_bar_chart(month):
+    fig1 = px.bar(data[mask] ,  x = 'profit' , y = 'month' , color = 'year' , title = 'monthly profit ' )
+fig1.show()
+    return fig1
 
 
 
