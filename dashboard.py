@@ -42,7 +42,7 @@ app.layout = html.Div([
 def update_bar_chart(dayofweek):
     mask = data["dayofweek"] == dayofweek
     fig1 = px.bar(data[mask] ,  x = 'profit' , y = 'dayofweek' , color = 'year' , title = 'daily profit ' )
-fig1.show()
+    fig1.show()
     return fig1
 
 @app.callback(
@@ -50,7 +50,7 @@ fig1.show()
     Input("dropdown", "value"))
 def update_bar_chart(month):
     fig1 = px.bar(data[mask] ,  x = 'profit' , y = 'month' , color = 'year' , title = 'monthly profit ' )
-fig1.show()
+    fig1.show()
     return fig1
 
 
