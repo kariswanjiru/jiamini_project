@@ -31,7 +31,7 @@ app.layout = html.Div([
     dcc.Graph(id="graph"),
 ])
 app.layout = html.Div([
-    html.H4('Profits by month'),
+    html.H4('Dashboard'),
     dcc.Graph(id="graph"),
 ])
     
@@ -49,8 +49,8 @@ fig1.show()
     Output("graph", "figure"), 
     Input("dropdown", "value"))
 def update_bar_chart(month):
-    fig1 = px.bar(data ,  x = 'profit' , y = 'month' , color = 'year' , title = 'monthly profit ' )
-fig1.show()
+    fig = px.bar(data ,  x = 'profit' , y = 'month' , color = 'year' , title = 'monthly profit ' )
+fig2.show()
     return fig1
 
 
