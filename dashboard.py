@@ -49,7 +49,7 @@ fig1.show()
     Output("graph", "figure"), 
     Input("dropdown", "value"))
 def update_bar_chart(month):
-    fig1 = px.bar(data[mask] ,  x = 'profit' , y = 'month' , color = 'year' , title = 'monthly profit ' )
+    fig1 = px.bar(data ,  x = 'profit' , y = 'month' , color = 'year' , title = 'monthly profit ' )
 fig1.show()
     return fig1
 
